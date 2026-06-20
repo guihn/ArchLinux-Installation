@@ -10,7 +10,7 @@
 |------------|---------|
 | **CPU** | AMD Ryzen 9 9900X (Zen 5, 12c/24t) — iGPU RDNA integrada |
 | **GPU Principal** | NVIDIA GTX 750 Ti (Maxwell GM107) — `nvidia-580xx-dkms` (AUR) |
-| **GPU Secundária** | AMD iGPU (Ryzen 9 9900X) — `mesa` + `vulkan-radeon` + `libva-mesa-driver` |
+| **GPU Secundária** | AMD iGPU (Ryzen 9 9900X) — `mesa` + `vulkan-radeon` + `libva-mesa-driver` + `amd-ucode` |
 | **Monitor Principal** | 144 Hz (limitado a 120 Hz pela GPU) |
 | **Monitor Secundário** | 75 Hz |
 | **Bootloader** | `grub` |
@@ -401,19 +401,9 @@ cd ~
 
 ---
 
-### 17. Instalar o Brave, fontes essenciais e ativar o Zsh
+### 17. Instalar Drivers NVIDIA
 
-Instalar o Brave Nightly para ter acesso a este documento e facilitar o restante da instalação. As fontes e o Zsh são instalados via pacman, e o shell é ativado em seguida:
-
-```bash
-sudo pacman -S ttf-hack-nerd noto-fonts-emoji zsh
-yay -S brave-nightly-bin
-chsh -s /bin/zsh
-```
-
----
-
-### 18. Instalar Drivers NVIDIA (via yay)
+> **Atenção:** Os pacotes `580xx` foram escolhidos especificamente para a GTX 750 Ti (Maxwell GM107) desta máquina. Antes de instalar em outro sistema, procure pela série de driver correta para a sua GPU em https://wiki.archlinux.org/title/NVIDIA.
 
 Instalar os três pacotes simultaneamente:
 
@@ -425,12 +415,13 @@ yay -S nvidia-580xx-dkms nvidia-580xx-utils lib32-nvidia-580xx-utils
 
 ---
 
-### 19. Instalar Pacotes do Sistema (pacman)
+### 18. Instalar Pacotes do Sistema
 
 Instalar todos os pacotes em um único comando:
 
 ```bash
 sudo pacman -S \
+  amd-ucode \
   mesa vulkan-radeon libva-mesa-driver \
   pipewire wireplumber pipewire-alsa pipewire-pulse \
   bluez bluez-utils \
@@ -439,7 +430,8 @@ sudo pacman -S \
   wl-clipboard cliphist \
   hyprland hypridle hyprpaper hyprpolkitagent hyprtoolkit hyprlauncher hyprshot \
   xdg-desktop-portal-hyprland xdg-user-dirs xorg-xwayland \
-  fastfetch
+  fastfetch imagemagick ly \
+  ttf-hack-nerd noto-fonts-emoji zsh
 ```
 
 > **Nota pessoal:** `hyprlock` não é usado nesta configuração. A inatividade é gerenciada exclusivamente pelo `hypridle`, configurado para apagar a tela após 1 minuto. O sistema é simplesmente ligado e desligado conforme necessário.
@@ -450,15 +442,16 @@ sudo pacman -S \
 
 ---
 
-### 20. Instalar Pacotes AUR
+### 19. Instalar Pacotes AUR e Ativar o Zsh
 
 ```bash
-yay -S ly vscodium-bin spotify pwvucontrol
+yay -S vscodium-bin spotify pwvucontrol brave-nightly-bin
+chsh -s /bin/zsh
 ```
 
 ---
 
-### 21. Ativar Serviços
+### 20. Ativar Serviços
 
 ```bash
 sudo systemctl enable bluetooth
@@ -468,7 +461,7 @@ xdg-user-dirs-update
 
 ---
 
-### 22. Reiniciar
+### 21. Reiniciar
 
 ```bash
 reboot
@@ -526,15 +519,16 @@ require ("windowsandworkspaces")
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
     output   = "HDMI-A-1",
-    mode     = "1920x1080@120",
-    position = "1x0",
+    mode     = "2560x1080@74.99",
+    position = "-1080x0",
     scale    = "1",
+    transform = 1,
 })
 
 hl.monitor({
     output   = "HDMI-A-2",
-    mode     = "2560x1080@74.99",
-    position = "-2560x0",
+    mode     = "1920x1080@120",
+    position = "0x0",
     scale    = "1",
 })
 ```
@@ -578,16 +572,18 @@ Para abrir o Spotify e o Discord dividindo a tela automaticamente no workspace `
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
 
-hl.exec_cmd("systemctl --user start hyprpolkitagent")
-hl.exec_cmd("hyprpaper")
-hl.exec_cmd("waybar")
-hl.exec_cmd("hyprlauncher -d")
-hl.exec_cmd("wl-paste --type text --watch cliphist store")
-hl.exec_cmd("wl-paste --type image --watch cliphist store")
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprlauncher -d")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
 -- Abre Spotify e Discord no workspace special:magic dividindo a tela
-hl.exec_cmd("spotify")
-hl.exec_cmd("discord")
+    hl.exec_cmd("spotify")
+    hl.exec_cmd("discord")
+end)
 ```
 
 ---
