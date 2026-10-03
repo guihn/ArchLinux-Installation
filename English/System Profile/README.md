@@ -75,7 +75,6 @@ These output names and modes describe a particular connection arrangement. Actua
 | PipeWire volume control | Graphical volume interface | `pwvucontrol` |
 | Brave Nightly | Personal browser choice | `brave-nightly-bin` |
 | Discord | Optional personal communication application | `discord` |
-| PCI inventory | Optional GPU identification command | `pciutils` |
 
 Current Mesa packaging provides `libva-mesa-driver`; it is not a second independent Mesa installation. DKMS is brought in by the driver dependency chain. The component table describes roles; the chronological package commands appear in Installation and Post Installation.
 

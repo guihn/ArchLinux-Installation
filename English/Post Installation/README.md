@@ -80,7 +80,7 @@ The reference response is **Yes** when yay offers removal of temporary make depe
 
 The reference NVIDIA card is a GTX 750 Ti, Maxwell GM107. Its driver group uses the proprietary 580xx branch, rather than the open kernel modules intended for newer supported generations. [Arch's NVIDIA documentation](https://wiki.archlinux.org/title/NVIDIA) and [driver-transition notice](https://archlinux.org/news/nvidia-590-driver-drops-pascal-support-main-packages-switch-to-open-kernel-modules/) identify the relevant families.
 
-Hardware identification is available through `lspci -nnk` from `pciutils`; when absent in the installed system, `sudo pacman -S --needed pciutils` supplies that diagnostic command. A different GPU requires its compatible package group and corresponding module/kernel settings. The 580xx packages are not a universal NVIDIA choice. AMD integrated graphics receive their Mesa stack in section 5.
+A different GPU requires its compatible package group and corresponding module/kernel settings. The 580xx packages are not a universal NVIDIA choice. AMD integrated graphics receive their Mesa stack in section 5.
 
 ### 4.2 One package transaction and DKMS verification
 
