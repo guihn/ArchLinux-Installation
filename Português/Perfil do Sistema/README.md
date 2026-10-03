@@ -43,7 +43,6 @@ Os nomes das saídas e os modos descrevem uma organização específica de conex
 | Git | Clones de fontes e do guia | `git` |
 | Yay | Auxiliar de compilação/instalação AUR | `yay` |
 | NVIDIA 580xx | Driver e utilitários da GTX 750 Ti | `nvidia-580xx-dkms`, `nvidia-580xx-utils`, `lib32-nvidia-580xx-utils` |
-| DKMS | Gerenciamento de compilação de módulos externos | `dkms` |
 | Mesa e RADV | Gráficos AMD e aceleração de vídeo | `mesa`, `vulkan-radeon`, `libva-mesa-driver` |
 | PipeWire | Servidor de áudio e compatibilidade ALSA/PulseAudio | `pipewire`, `pipewire-alsa`, `pipewire-pulse` |
 | WirePlumber | Gerenciamento da sessão de áudio e `wpctl` | `wireplumber` |
