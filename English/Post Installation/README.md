@@ -141,7 +141,7 @@ sudo pacman -S \
   xdg-desktop-portal-hyprland xdg-user-dirs xorg-xwayland \
   fastfetch imagemagick ly \
   ttf-hack-nerd noto-fonts-emoji zsh \
-  wofi brightnessctl playerctl qt5ct
+  wofi brightnessctl qt5ct
 ```
 
 `amd-ucode` supplies AMD CPU microcode, not an AMD graphics driver. Mesa provides OpenGL and VA-API support; `libva-mesa-driver` is a provided package name satisfied by current Mesa packaging. `vulkan-radeon` supplies the AMD Vulkan driver. Intel CPUs or other GPUs require their respective choices instead of a universal copy of the reference hardware stack.
@@ -154,7 +154,6 @@ The [System Profile](https://github.com/guihn/ArchLinux-Installation/tree/main/E
 | --- | --- |
 | `wofi` | Menu for selecting an item from clipboard history. |
 | `brightnessctl` | Brightness-key commands on devices exposing a supported backlight. |
-| `playerctl` | Previous/next track and play/pause commands for MPRIS-compatible media applications. |
 | `qt5ct` | The `QT_QPA_PLATFORMTHEME=qt5ct` choice for Qt 5 applications. |
 
 `playerctl` is a media controller, not an audio server or a player. Its commands communicate with applications such as Spotify through MPRIS. Brightness keys do not automatically control every external monitor; hardware support determines their effect. The Qt 5 theme setting does not claim to configure every Qt 6 application.

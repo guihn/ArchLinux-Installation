@@ -68,7 +68,6 @@ These output names and modes describe a particular connection arrangement. Actua
 | Fonts | Nerd Font symbols and emoji | `ttf-hack-nerd`, `noto-fonts-emoji` |
 | Zsh | Login and interactive shell | `zsh` |
 | Brightness controller | Supported backlight keys | `brightnessctl` |
-| Media controller | MPRIS playback keys | `playerctl` |
 | Qt 5 configuration | Qt 5 theme preference | `qt5ct` |
 | VSCodium | Code editor | `vscodium-bin` |
 | Spotify | Personal media application | `spotify` |
