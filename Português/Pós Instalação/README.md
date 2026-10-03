@@ -141,7 +141,7 @@ sudo pacman -S \
   xdg-desktop-portal-hyprland xdg-user-dirs xorg-xwayland \
   fastfetch imagemagick ly \
   ttf-hack-nerd noto-fonts-emoji zsh \
-  wofi brightnessctl playerctl qt5ct
+  wofi brightnessctl qt5ct
 ```
 
 `amd-ucode` fornece microcódigo da CPU AMD, não um driver gráfico AMD. Mesa oferece OpenGL e VA-API; `libva-mesa-driver` é um nome fornecido pelo empacotamento atual do Mesa. `vulkan-radeon` fornece o driver Vulkan AMD. CPUs Intel ou outras GPUs exigem as escolhas correspondentes, em vez de uma cópia universal do conjunto de hardware de referência.
@@ -154,7 +154,6 @@ O [Perfil do Sistema](https://github.com/guihn/ArchLinux-Installation/tree/main/
 | --- | --- |
 | `wofi` | Menu para selecionar um item do histórico da área de transferência. |
 | `brightnessctl` | Comandos das teclas de brilho em dispositivos com iluminação compatível. |
-| `playerctl` | Faixa anterior/próxima e reprodução/pausa em aplicativos compatíveis com MPRIS. |
 | `qt5ct` | Opção `QT_QPA_PLATFORMTHEME=qt5ct` para aplicativos Qt 5. |
 
 `playerctl` é um controlador de mídia, não um servidor de áudio nem um reprodutor. Seus comandos se comunicam com aplicativos como Spotify por MPRIS. As teclas de brilho não controlam automaticamente todo monitor externo; o suporte do hardware determina seu efeito. A opção de tema Qt 5 não implica configuração de todos os aplicativos Qt 6.

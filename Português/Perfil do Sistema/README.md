@@ -68,7 +68,6 @@ Os nomes das saídas e os modos descrevem uma organização específica de conex
 | Fontes | Símbolos Nerd Font e emoji | `ttf-hack-nerd`, `noto-fonts-emoji` |
 | Zsh | Shell de login e interativo | `zsh` |
 | Controle de brilho | Teclas de iluminação compatível | `brightnessctl` |
-| Controle de mídia | Teclas de reprodução MPRIS | `playerctl` |
 | Configuração Qt 5 | Preferência de tema Qt 5 | `qt5ct` |
 | VSCodium | Editor de código | `vscodium-bin` |
 | Spotify | Aplicativo pessoal de mídia | `spotify` |
