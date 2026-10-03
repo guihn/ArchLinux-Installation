@@ -43,7 +43,6 @@ These output names and modes describe a particular connection arrangement. Actua
 | Git | Source and guide checkouts | `git` |
 | Yay | AUR build/installation helper | `yay` |
 | NVIDIA 580xx | GTX 750 Ti driver and utilities | `nvidia-580xx-dkms`, `nvidia-580xx-utils`, `lib32-nvidia-580xx-utils` |
-| DKMS | External-module build management | `dkms` |
 | Mesa and RADV | AMD graphics and video acceleration | `mesa`, `vulkan-radeon`, `libva-mesa-driver` |
 | PipeWire | Audio server and ALSA/PulseAudio compatibility | `pipewire`, `pipewire-alsa`, `pipewire-pulse` |
 | WirePlumber | Audio session management and `wpctl` | `wireplumber` |
