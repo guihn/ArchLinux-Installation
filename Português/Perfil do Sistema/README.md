@@ -75,7 +75,6 @@ Os nomes das saídas e os modos descrevem uma organização específica de conex
 | Controle de volume PipeWire | Interface gráfica de volume | `pwvucontrol` |
 | Brave Nightly | Navegador pessoal | `brave-nightly-bin` |
 | Discord | Aplicativo pessoal opcional de comunicação | `discord` |
-| Inventário PCI | Comando opcional de identificação de GPU | `pciutils` |
 
 O empacotamento atual do Mesa fornece `libva-mesa-driver`; ele não representa uma segunda instalação independente do Mesa. DKMS integra a cadeia de dependências do driver. A tabela descreve funções; os comandos de instalação aparecem cronologicamente na Instalação e na Pós Instalação.
 

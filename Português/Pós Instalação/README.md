@@ -80,7 +80,7 @@ A resposta de referência é **Sim** quando o yay oferece remoção das dependê
 
 A placa NVIDIA de referência é a GTX 750 Ti, Maxwell GM107. Seu grupo de drivers utiliza a série proprietária 580xx, em vez dos módulos abertos destinados às gerações compatíveis mais novas. A [documentação NVIDIA do Arch](https://wiki.archlinux.org/title/NVIDIA_(Portugu%C3%AAs)) e o [aviso de transição dos drivers](https://archlinux.org/news/nvidia-590-driver-drops-pascal-support-main-packages-switch-to-open-kernel-modules/), em inglês, identificam as famílias correspondentes.
 
-A identificação de hardware está disponível por `lspci -nnk`, do pacote `pciutils`; quando ausente no sistema instalado, `sudo pacman -S --needed pciutils` fornece esse comando de diagnóstico. Outra GPU exige seu grupo de pacotes compatível e as configurações correspondentes de módulos e kernel. Os pacotes 580xx não são uma escolha universal para NVIDIA. Os gráficos integrados AMD recebem o conjunto Mesa na seção 5.
+Outra GPU exige seu grupo de pacotes compatível e as configurações correspondentes de módulos e kernel. Os pacotes 580xx não são uma escolha universal para NVIDIA. Os gráficos integrados AMD recebem o conjunto Mesa na seção 5.
 
 ### 4.2 Transação única e verificação do DKMS
 
